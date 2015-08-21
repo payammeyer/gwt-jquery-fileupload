@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='gwtjqueryfileupload'>
+
+	<inherits name='com.google.gwt.user.User'/>
+	<inherits name='com.google.gwt.place.Place'/>
+	<inherits name="com.google.gwt.i18n.I18N"/>
+
+	<!-- <inherits name='com.google.gwt.user.theme.clean.Clean' />-->
+	<!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+
+	<inherits name="org.gwtbootstrap3.GwtBootstrap3Theme"/>
+	<inherits name="org.gwtbootstrap3.extras.growl.Growl"/>
+	<inherits name="org.gwtbootstrap3.extras.bootbox.Bootbox"/>
+	<inherits name="org.gwtbootstrap3.extras.toggleswitch.ToggleSwitch"/>
+	<inherits name="org.gwtbootstrap3.extras.positionedtabs.PositionedTabs"/>
+	<inherits name="com.googlecode.gwt.crypto.Crypto"/>
+	<inherits name="com.google.common.base.Base"/>
+
+	<entry-point class='org.gwtjqueryfileupload.client.GWTJQueryFileUpload'/>
+
+	<source path='client'/>
+	<source path='shared'/>
+
+</module>

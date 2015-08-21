@@ -1,0 +1,73 @@
+defaultTasks 'eclipse', 'build'
+
+buildscript {
+	repositories {
+		mavenCentral()
+		jcenter()
+	}
+	dependencies {
+		classpath 'com.github.rholder:gradle-one-jar:1.0.3'
+		classpath(group: 'com.sahlbach.gradle', name: 'gradle-jetty-eclipse-plugin', version: '1.9.+')
+	}
+}
+
+subprojects {
+	defaultTasks 'build'
+
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+
+	version = '1.0.0'
+
+	group = 'org.gwtjqueryfileupload'
+
+	repositories {
+		mavenCentral()
+		flatDir name: 'directoryRepository', dirs: rootProject.file('notInMaven')
+		maven {
+			url "https://oss.sonatype.org/content/repositories/snapshots"
+		}
+	}
+
+	[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+	compileJava {
+		options.debug = true
+		options.debugOptions.debugLevel = "source,lines,vars"
+	}
+
+	sourceSets {
+		main { resources { srcDir 'src/main/java' } }
+		test { resources { srcDir 'src/test/java' } }
+	}
+
+
+	task sourceJar(type: Jar) {
+		classifier = 'sources'
+		from sourceSets.main.allSource
+	}
+
+
+
+	jar {
+		dependsOn 'sourceJar'
+	}
+
+	configurations {
+		source
+	}
+
+
+	artifacts {
+		source sourceJar
+	}
+
+	task listJars << {
+		configurations.runtime.each { File file -> println file.name }
+	}
+
+
+}

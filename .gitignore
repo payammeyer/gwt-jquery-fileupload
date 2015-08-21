@@ -1,0 +1,14 @@
+.classpath
+.gradle
+.gwt
+.idea
+.project
+.settings
+bin
+build
+**/*.iml
+classes
+out
+**/war/WEB-INF/classes
+**/war/WEB-INF/lib/
+**/war/WEB-INF/deploy/
