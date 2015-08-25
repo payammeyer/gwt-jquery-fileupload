@@ -16,7 +16,7 @@
 
 	<filter>
 		<filter-name>gwtCacheControlFilter</filter-name>
-		<filter-class>org.pcori.topicsgwt.server.GWTCacheControlFilter</filter-class>
+		<filter-class>org.gwtjqueryfileupload.server.GWTCacheControlFilter</filter-class>
 	</filter>
 
 	<filter-mapping>
